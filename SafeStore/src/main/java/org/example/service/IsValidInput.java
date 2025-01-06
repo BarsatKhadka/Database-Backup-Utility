@@ -50,7 +50,7 @@ public class IsValidInput {
               String exceptionType = e.getClass().getSimpleName();
               String exceptionMessage = e.getMessage();
               System.out.println(exceptionType + ":" + " " + exceptionMessage);
-              return Optional.empty();
+
             }
       }
 
