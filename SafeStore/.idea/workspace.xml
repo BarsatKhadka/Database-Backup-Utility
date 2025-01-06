@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="32856d65-fa3c-4bf8-847d-32fffc7e9e09" name="Changes" comment="add: Checks to see if the provided database name exists or not.">
+    <list default="true" id="32856d65-fa3c-4bf8-847d-32fffc7e9e09" name="Changes" comment="add: command working on unix based systems for my sql through process builder.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/service/DbToRestore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/service/DbToRestore.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -79,7 +78,7 @@
       <option name="presentableId" value="Default" />
       <updated>1736108883774</updated>
       <workItem from="1736108884841" duration="16253000" />
-      <workItem from="1736171313345" duration="19621000" />
+      <workItem from="1736171313345" duration="22204000" />
     </task>
     <task id="LOCAL-00001" summary="Initial setup. Test on fetching from jdbc api.">
       <option name="closed" value="true" />
@@ -137,7 +136,15 @@
       <option name="project" value="LOCAL" />
       <updated>1736186750083</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="add: command working on unix based systems for my sql through process builder.">
+      <option name="closed" value="true" />
+      <created>1736200245403</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1736200245403</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -151,7 +158,8 @@
     <MESSAGE value="update: Code refactoring for efficency." />
     <MESSAGE value="update: Displaying all databases in a better way." />
     <MESSAGE value="add: Checks to see if the provided database name exists or not." />
-    <option name="LAST_COMMIT_MESSAGE" value="add: Checks to see if the provided database name exists or not." />
+    <MESSAGE value="add: command working on unix based systems for my sql through process builder." />
+    <option name="LAST_COMMIT_MESSAGE" value="add: command working on unix based systems for my sql through process builder." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

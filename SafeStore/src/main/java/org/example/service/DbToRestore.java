@@ -16,23 +16,29 @@ public class DbToRestore {
         String port = userInputs.get(2);
         String username = userInputs.get(3);
         String password = userInputs.get(4);
-        String osName = System.getProperty("os.name");
+
 
         if(database.equals("mysql")){
-            if(osName.contains("Windows")){}
-            else{
+                String desktopPath = System.getProperty("user.home") + "/Desktop/";   //user's data will be stored in Desktop.
+
                 String[] commands = {"mysqldump", "-h", host , "-u", username, "-p"+password , databaseName};
+
+                if(!port.equals("3306")){
+                    commands = new String[]{"mysqldump", "-h", host, "-P", port, "-u", username, "-p" + password, databaseName};
+                }
+
 
                 ProcessBuilder processBuilder = new ProcessBuilder(commands);
                 // the '>' in shell command to redirect output to path is done by this in process Builder.
-                processBuilder.redirectOutput(new File(databaseName+".sql"));
+                processBuilder.redirectOutput(new File(desktopPath+ databaseName+".sql"));
 
                 try {
                     Process process = processBuilder.start();
                     process.waitFor();
                     System.out.println("Database backup completed.");
                 } catch (IOException e) {
-                    throw new RuntimeException(e);
+                    throw new RuntimeException("Failed to execute the database backup command. Please ensure MySQL is installed and accessible, " +
+                            "and the output file path is valid. Error: " + e.getMessage());
                 } catch (InterruptedException e) {
                     throw new RuntimeException(e);
                 }
@@ -44,4 +50,4 @@ public class DbToRestore {
 
 
 
-}}
+}
