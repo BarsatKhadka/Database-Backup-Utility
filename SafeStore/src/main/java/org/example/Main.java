@@ -1,23 +1,23 @@
 package org.example;
 
 import org.example.service.AskUserInput;
-import org.example.service.ProcessUserInput;
+import org.example.service.IsValidInput;
 
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Optional;
 
 public class Main {
     public static void main(String[] args) throws SQLException {
 
-
-//        ask User for input.
         AskUserInput askUserInput = new AskUserInput();
         List<String> userInputs = askUserInput.askUserInput();
 
-        //process User input
-        ProcessUserInput processUserInput = new ProcessUserInput();
-        //first check if user input is valid or not
-        processUserInput.isValidInput(userInputs);
+        //check if user input is valid or not. If user input is valid then it will give you list of databases according to user's input database.
+        Optional<List<String>> checkInput = IsValidInput.isValidInput(userInputs);
+
+
+
     }
 }
 
