@@ -18,23 +18,40 @@ public class Main {
         Optional<List<String>> allDatabases = IsValidInput.isValidInput(userInputs);
 
         int count = 1;
-        if(allDatabases.isPresent()){
+        if(allDatabases.isPresent()) {
+
             System.out.println("You have " + allDatabases.get().size() + " databases." +
-                    " Enter the name of database you want to restore. Type 'all' to restore all databases." );
-            for(String databaseName: allDatabases.get()){ System.out.println( count + "." + " "+ databaseName); count++; }
+                    " Enter the name of database you want to restore. Type 'all' to restore all databases.");
+
+            //displaying all databases present.
+            for (String databaseName : allDatabases.get()) {
+                System.out.println(count + "." + " " + databaseName);
+                count++;
+            }
+
+            //scanner to take user input's database name to restore
             Scanner scanner = new Scanner(System.in);
+            System.out.print("Enter database name: ");
             String databaseName = scanner.next();
-            DbToRestore.DBToRestore(databaseName);
+
+            if (allDatabases.get().contains(databaseName)) {
+                DbToRestore.DBToRestore(databaseName);
+            } else if (databaseName.equals("all")) {
+                DbToRestore.DBToRestore("");
+            }
+            else {
+                System.out.println("Invalid database name.");
+                while(!allDatabases.get().contains(databaseName) && !databaseName.equals("all")){
+                    System.out.print("Enter database name: ");
+                    databaseName = scanner.next();
+
+                }
+                DbToRestore.DBToRestore(databaseName);
+
+            }
 
 
-        }else{
-            System.out.println("Invalid input provided.");
         }
-
-
-
-
-
     }
 }
 

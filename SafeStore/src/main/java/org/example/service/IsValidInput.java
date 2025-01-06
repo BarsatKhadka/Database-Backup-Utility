@@ -14,6 +14,7 @@ public class IsValidInput {
 
       if(dataBaseDetails.size() != 5){
           System.out.println("Insufficient parameters provided.");
+          return Optional.empty();
       }
 
       String database = dataBaseDetails.get(0);
