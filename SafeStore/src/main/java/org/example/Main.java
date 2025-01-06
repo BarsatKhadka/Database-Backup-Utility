@@ -35,9 +35,9 @@ public class Main {
             String databaseName = scanner.next();
 
             if (allDatabases.get().contains(databaseName)) {
-                DbToRestore.DBToRestore(databaseName);
+                DbToRestore.DBToRestore(databaseName , userInputs );
             } else if (databaseName.equals("all")) {
-                DbToRestore.DBToRestore("");
+                DbToRestore.DBToRestore("" , userInputs);
             }
             else {
                 System.out.println("Invalid database name.");
@@ -46,7 +46,7 @@ public class Main {
                     databaseName = scanner.next();
 
                 }
-                DbToRestore.DBToRestore(databaseName);
+                DbToRestore.DBToRestore(databaseName , userInputs);
 
             }
 
