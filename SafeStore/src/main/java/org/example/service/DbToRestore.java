@@ -6,10 +6,18 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class DbToRestore {
 
     public static void DBToRestore(String databaseName , List<String> userInputs)  {
+
+        String backupType = "";
+        System.out.print("Type of backup you want to perform <full , incremental , differential> :");
+        while(!backupType.equals("full") && !backupType.equals("incremental") && !backupType.equals("differential")) {
+            Scanner scanner = new Scanner(System.in);
+            backupType = scanner.next();
+        }
 
         String database = userInputs.get(0);
         String host = userInputs.get(1);
@@ -18,13 +26,17 @@ public class DbToRestore {
         String password = userInputs.get(4);
 
 
-        if(database.equals("mysql")){
+        if(database.equals("mysql") && backupType.equals("full")){
                 String desktopPath = System.getProperty("user.home") + "/Desktop/";   //user's data will be stored in Desktop.
 
                 String[] commands = {"mysqldump", "-h", host , "-u", username, "-p"+password , databaseName};
 
                 if(!port.equals("3306")){
                     commands = new String[]{"mysqldump", "-h", host, "-P", port, "-u", username, "-p" + password, databaseName};
+                }
+
+                if(databaseName.equals("all")){
+                    commands = new String[]{"mysqldump", "-h", host, "-u", username, "-p" + password, "--all-databases"};
                 }
 
 

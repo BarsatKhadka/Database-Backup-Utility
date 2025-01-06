@@ -37,14 +37,13 @@ public class Main {
             if (allDatabases.get().contains(databaseName)) {
                 DbToRestore.DBToRestore(databaseName , userInputs );
             } else if (databaseName.equals("all")) {
-                DbToRestore.DBToRestore("" , userInputs);
+                DbToRestore.DBToRestore("all" , userInputs);
             }
             else {
                 System.out.println("Invalid database name.");
                 while(!allDatabases.get().contains(databaseName) && !databaseName.equals("all")){
                     System.out.print("Enter database name: ");
                     databaseName = scanner.next();
-
                 }
                 DbToRestore.DBToRestore(databaseName , userInputs);
 
