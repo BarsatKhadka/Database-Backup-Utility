@@ -7,24 +7,30 @@ import java.util.List;
 
 public class ProcessUserInput {
 
-    public String isValidInput(List<String> dataBaseDetails){
+    public void isValidInput(List<String> dataBaseDetails){
 
       if(dataBaseDetails.size() != 4){
-          return "Insufficient parameters provided.";
+          System.out.println("Insufficient parameters provided.");
       }
 
-      String host = dataBaseDetails.get(0);
-      String port = dataBaseDetails.get(1);
-      String username = dataBaseDetails.get(2);
-      String password = dataBaseDetails.get(3);
+      String database = dataBaseDetails.get(0);
+      String host = dataBaseDetails.get(1);
+      String port = dataBaseDetails.get(2);
+      String username = dataBaseDetails.get(3);
+      String password = dataBaseDetails.get(4);
 
-     try (Connection connection = DriverManager.getConnection("jdbc:mysql://" + host+ ":"+ port, username, password)){
+      if(database.equals("mysql")) {
+            try (Connection connection = DriverManager.getConnection("jdbc:mysql://" + host + ":" + port, username, password)) {
                 System.out.println("Connection successful");
-     } catch (SQLException e) {
-         throw new RuntimeException(e);
-     }
+            } catch (Exception e) {
+              String exceptionType = e.getClass().getSimpleName();
+              String exceptionMessage = e.getMessage();
+              System.out.println(exceptionType + ":" + " " + exceptionMessage);
+            }
+      }
 
-        return "true";
+
+
     }
 
 

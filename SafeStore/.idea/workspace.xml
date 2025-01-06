@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="32856d65-fa3c-4bf8-847d-32fffc7e9e09" name="Changes" comment="add: AskUserInput Service class to ask user's for their database details before backup.">
+    <list default="true" id="32856d65-fa3c-4bf8-847d-32fffc7e9e09" name="Changes" comment="add: check Connection based on user input.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/service/AskUserInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/service/AskUserInput.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/service/ProcessUserInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/service/ProcessUserInput.java" afterDir="false" />
     </list>
@@ -78,7 +77,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1736108883774</updated>
-      <workItem from="1736108884841" duration="10304000" />
+      <workItem from="1736108884841" duration="14198000" />
     </task>
     <task id="LOCAL-00001" summary="Initial setup. Test on fetching from jdbc api.">
       <option name="closed" value="true" />
@@ -96,7 +95,15 @@
       <option name="project" value="LOCAL" />
       <updated>1736120783883</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="add: check Connection based on user input.">
+      <option name="closed" value="true" />
+      <created>1736124662519</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1736124662519</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -105,7 +112,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial setup. Test on fetching from jdbc api." />
     <MESSAGE value="add: AskUserInput Service class to ask user's for their database details before backup." />
-    <option name="LAST_COMMIT_MESSAGE" value="add: AskUserInput Service class to ask user's for their database details before backup." />
+    <MESSAGE value="add: check Connection based on user input." />
+    <option name="LAST_COMMIT_MESSAGE" value="add: check Connection based on user input." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

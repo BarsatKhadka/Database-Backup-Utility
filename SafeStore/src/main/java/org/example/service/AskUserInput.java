@@ -36,6 +36,6 @@ public class AskUserInput {
         String password = passwordScanner.next();
 
 
-        return Arrays.asList(host, port, username, password);
+        return Arrays.asList(database,host, port, username, password);
     }
 }
