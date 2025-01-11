@@ -36,7 +36,8 @@ public class MySQLIncremental {
         String folderName = scanner.next();
         if(isFileExists(incrementalBackupDir + File.separator + folderName)) {
             System.out.println("Folder already exists!");
-            PerformBackup(user,pwd , incrementalBackupDir+File.separator+folderName);
+            PerformIncrementalBackup(user,pwd , incrementalBackupDir+File.separator+folderName , databaseName);
+
         }
         else{
             System.out.println("Creating new folder on directory " + incrementalBackupDir + File.separator + folderName + " and storing your Incremental Backup File.");
@@ -112,17 +113,19 @@ public class MySQLIncremental {
         }
     }
 
-    public static void PerformBackup(String MYSQL_USER , String MYSQL_PASSWORD , String targetDir) {
-        String incrementalDir = targetDir + File.separator + "incremental";
-        ProcessBuilder processBuilder = new ProcessBuilder();
-        processBuilder.command("xtrabackup", "--backup",
-                "--user=" + MYSQL_USER,
-                "--password=" + MYSQL_PASSWORD,
-                "--target-dir=" + targetDir);
+    public static void PerformIncrementalBackup(String MYSQL_USER , String MYSQL_PASSWORD , String targetDir , String database) {
+        System.out.println("\nsudo: Enter your password: ");
+        Scanner scanner = new Scanner(System.in);
+        String sudoPassword = scanner.next();
 
-        if (incrementalDir != null) {
-            processBuilder.command().add("--incremental-basedir=" + incrementalDir);
-        }
+        String incrementalDir = targetDir + File.separator + "incremental" + System.currentTimeMillis();
+        ProcessBuilder processBuilder = new ProcessBuilder();
+        processBuilder.command("bash", "-c", "echo " + sudoPassword + " | sudo -S xtrabackup --backup " +
+                "--user=" + MYSQL_USER + " " +
+                "--password=" + MYSQL_PASSWORD + " " +
+                "--target-dir=" + incrementalDir + " " +
+                "--incremental-basedir=" + targetDir);
+
 
         Process process = null;
         try {
@@ -140,6 +143,16 @@ public class MySQLIncremental {
                 throw new RuntimeException(e);
             }
             System.out.println(line);
+        }
+        BufferedReader errorReader = new BufferedReader(new InputStreamReader(process.getErrorStream()));
+        String errorLine;
+        while (true) {
+            try {
+                if (!((errorLine = errorReader.readLine()) != null)) break;
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+            System.err.println(errorLine);
         }
 
         int exitCode = 0;

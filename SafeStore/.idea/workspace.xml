@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="32856d65-fa3c-4bf8-847d-32fffc7e9e09" name="Changes" comment="add: Full backup if folder is not present.">
+    <list default="true" id="32856d65-fa3c-4bf8-847d-32fffc7e9e09" name="Changes" comment="add: Targeting full backups for incremental backup based on database name">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/service/DbToRestore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/service/DbToRestore.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/service/Incremental/MySQLIncremental.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/service/Incremental/MySQLIncremental.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -81,7 +80,7 @@
       <updated>1736108883774</updated>
       <workItem from="1736108884841" duration="16253000" />
       <workItem from="1736171313345" duration="28745000" />
-      <workItem from="1736609355297" duration="19800000" />
+      <workItem from="1736609355297" duration="23845000" />
     </task>
     <task id="LOCAL-00001" summary="Initial setup. Test on fetching from jdbc api.">
       <option name="closed" value="true" />
@@ -211,7 +210,15 @@
       <option name="project" value="LOCAL" />
       <updated>1736633153644</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="add: Targeting full backups for incremental backup based on database name">
+      <option name="closed" value="true" />
+      <created>1736634711862</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1736634711862</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -234,7 +241,8 @@
     <MESSAGE value="add: Recorrection of the logic" />
     <MESSAGE value="add: checks if xtrabackup is installed in your system." />
     <MESSAGE value="add: Full backup if folder is not present." />
-    <option name="LAST_COMMIT_MESSAGE" value="add: Full backup if folder is not present." />
+    <MESSAGE value="add: Targeting full backups for incremental backup based on database name" />
+    <option name="LAST_COMMIT_MESSAGE" value="add: Targeting full backups for incremental backup based on database name" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
