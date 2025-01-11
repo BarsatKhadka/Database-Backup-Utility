@@ -1,5 +1,7 @@
 package org.example.service;
 
+import org.example.service.Incremental.MySQLIncremental;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
@@ -13,7 +15,14 @@ public class DbToRestore {
     public static void DBToRestore(String databaseName , List<String> userInputs)  {
 
         String backupType = "";
-        System.out.print("Type of backup you want to perform <full , incremental , differential> :");
+        System.out.print("Type of backup you want to perform <full , incremental , differential> : ");
+
+        while(databaseName.equals("all") && !backupType.equals("full")) {
+            System.out.print("You can only perform full backups for all databases. Type 'full' to perform the full backup: ");
+            Scanner scanner = new Scanner(System.in);
+            backupType = scanner.next();
+        }
+
         while(!backupType.equals("full") && !backupType.equals("incremental") && !backupType.equals("differential")) {
             Scanner scanner = new Scanner(System.in);
             backupType = scanner.next();
@@ -57,6 +66,14 @@ public class DbToRestore {
 
 
             }
+
+        if(database.equals("mysql") && backupType.equals("incremental")){
+
+
+            MySQLIncremental incremental = new MySQLIncremental();
+            incremental.incremental(username , password);
+
+        }
 
     }
 

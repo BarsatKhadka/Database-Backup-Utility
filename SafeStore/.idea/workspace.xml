@@ -4,9 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="32856d65-fa3c-4bf8-847d-32fffc7e9e09" name="Changes" comment="add: Windows and unix command are same. Actually i need to test in windows some time. Port number check is also added for anything besides default port for mySql">
+    <list default="true" id="32856d65-fa3c-4bf8-847d-32fffc7e9e09" name="Changes" comment="add: added option for type of backup. (Logic only implemented for full backups)">
+      <change afterPath="$PROJECT_DIR$/../.idea/Database-Backup-Utility.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Java-DSA/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Java-DSA/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Java-DSA/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Java-DSA/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Java-DSA/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Java-DSA/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Java-DSA/src/main/java/org/example/App.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Java-DSA/src/test/java/org/example/AppTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/service/Incremental/MySQLIncremental.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/service/DbToRestore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/service/DbToRestore.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -53,6 +62,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/home/rain-barsat/Projects/Database-Backup-Utility/SafeStore/pom.xml",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -79,7 +89,8 @@
       <option name="presentableId" value="Default" />
       <updated>1736108883774</updated>
       <workItem from="1736108884841" duration="16253000" />
-      <workItem from="1736171313345" duration="24838000" />
+      <workItem from="1736171313345" duration="28745000" />
+      <workItem from="1736609355297" duration="4652000" />
     </task>
     <task id="LOCAL-00001" summary="Initial setup. Test on fetching from jdbc api.">
       <option name="closed" value="true" />
@@ -153,7 +164,15 @@
       <option name="project" value="LOCAL" />
       <updated>1736202810653</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="add: added option for type of backup. (Logic only implemented for full backups)">
+      <option name="closed" value="true" />
+      <created>1736206578813</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1736206578813</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -169,7 +188,8 @@
     <MESSAGE value="add: Checks to see if the provided database name exists or not." />
     <MESSAGE value="add: command working on unix based systems for my sql through process builder." />
     <MESSAGE value="add: Windows and unix command are same. Actually i need to test in windows some time. Port number check is also added for anything besides default port for mySql" />
-    <option name="LAST_COMMIT_MESSAGE" value="add: Windows and unix command are same. Actually i need to test in windows some time. Port number check is also added for anything besides default port for mySql" />
+    <MESSAGE value="add: added option for type of backup. (Logic only implemented for full backups)" />
+    <option name="LAST_COMMIT_MESSAGE" value="add: added option for type of backup. (Logic only implemented for full backups)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
