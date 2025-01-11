@@ -5,16 +5,25 @@ import java.util.Scanner;
 
 public class MySQLIncremental {
     public void incremental(String user , String password) {
-        String fullBackupDir = giveFullBackupDir();
-        System.out.println(fullBackupDir);
 
-    }
-
-    public static String giveFullBackupDir() {
-        String homeDir = System.getProperty("user.home");
         System.out.println("\nEnter relative path to store your Incremental Backup File. \n eg: If you want " +
                 "your file in desktop , simply type Desktop");
         System.out.print("\nEnter relative path of your Incremental Backup File: ");
+        String incrementalBackupDir = giveIncrementalBackupDir();
+        while(!incrementalBackupDir.equals("directory path not valid")) {
+            System.out.println("---------Directory path not valid---------------");
+            System.out.print("\nReEnter relative path of your Incremental Backup File: ");
+            incrementalBackupDir = giveIncrementalBackupDir();
+        }
+        System.out.println("Enter file name");
+
+    }
+
+
+
+    public static String giveIncrementalBackupDir() {
+        String homeDir = System.getProperty("user.home");
+
         Scanner scanner = new Scanner(System.in);
         String relativePath = scanner.next();
 

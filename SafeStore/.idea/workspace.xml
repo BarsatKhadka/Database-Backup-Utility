@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="32856d65-fa3c-4bf8-847d-32fffc7e9e09" name="Changes" comment="add: Only full backups for 'all' databases and Setup of MySQL for incremental backups.">
+    <list default="true" id="32856d65-fa3c-4bf8-847d-32fffc7e9e09" name="Changes" comment="add: Directory path to push incremental backups to.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/service/Incremental/MySQLIncremental.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/service/Incremental/MySQLIncremental.java" afterDir="false" />
     </list>
@@ -80,7 +80,7 @@
       <updated>1736108883774</updated>
       <workItem from="1736108884841" duration="16253000" />
       <workItem from="1736171313345" duration="28745000" />
-      <workItem from="1736609355297" duration="9436000" />
+      <workItem from="1736609355297" duration="11075000" />
     </task>
     <task id="LOCAL-00001" summary="Initial setup. Test on fetching from jdbc api.">
       <option name="closed" value="true" />
@@ -170,7 +170,15 @@
       <option name="project" value="LOCAL" />
       <updated>1736615340207</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="add: Directory path to push incremental backups to.">
+      <option name="closed" value="true" />
+      <created>1736620288946</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1736620288946</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -188,7 +196,8 @@
     <MESSAGE value="add: Windows and unix command are same. Actually i need to test in windows some time. Port number check is also added for anything besides default port for mySql" />
     <MESSAGE value="add: added option for type of backup. (Logic only implemented for full backups)" />
     <MESSAGE value="add: Only full backups for 'all' databases and Setup of MySQL for incremental backups." />
-    <option name="LAST_COMMIT_MESSAGE" value="add: Only full backups for 'all' databases and Setup of MySQL for incremental backups." />
+    <MESSAGE value="add: Directory path to push incremental backups to." />
+    <option name="LAST_COMMIT_MESSAGE" value="add: Directory path to push incremental backups to." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
