@@ -8,15 +8,14 @@ import java.util.Scanner;
 
 public class MySQLIncremental {
     public void incremental(String user , String password) {
+        String username = user;
+        String pwd = password;
+
         try {
             isXtraBackupInstalled();
         } catch (IOException e) {
-            try {
-                System.out.println("XtraBackup is not installed in your system. It will be automatically installed. If this process fails please try manually installing XtraBackup.");
-                installXtraBackup();
-            } catch (IOException | InterruptedException ex) {
-                System.out.println(ex.getMessage() + " " + "report the issue to owner.");
-            }
+            System.out.println("XtraBackup is not installed in your system. Please manually install percona XtraBackup.");
+
         } catch (InterruptedException e) {
             System.out.println(e.getMessage());
         }
@@ -37,9 +36,12 @@ public class MySQLIncremental {
         String folderName = scanner.next();
         if(isFileExists(incrementalBackupDir + File.separator + folderName)) {
             System.out.println("Folder already exists!");
+            PerformBackup(user,pwd , incrementalBackupDir+File.separator+folderName);
         }
         else{
-
+            System.out.println("Creating new folder on directory " + incrementalBackupDir + File.separator + folderName + " and storing your Incremental Backup File.");
+            PerformFullBackup(user,pwd , incrementalBackupDir+File.separator+folderName);
+            System.out.println("Folder created and full backup is set for future incremental backup.!");
 
         }
 
@@ -57,11 +59,96 @@ public class MySQLIncremental {
 
     }
 
-    private static void installXtraBackup() throws IOException, InterruptedException {
+    public static void PerformFullBackup(String MYSQL_USER, String MYSQL_PASSWORD, String targetDir) {
+        System.out.println("\nsudo: Enter your password: ");
+        Scanner scanner = new Scanner(System.in);
+        String sudoPassword = scanner.next();
 
+        ProcessBuilder processBuilder = new ProcessBuilder();
+        processBuilder.command("bash", "-c", "echo " + sudoPassword + " | sudo -S xtrabackup --backup --user=" + MYSQL_USER + " --password=" + MYSQL_PASSWORD + " --target-dir=" + targetDir);
+
+        System.out.println("Executing command: " + targetDir);
+
+        Process process = null;
+        try {
+            process = processBuilder.start();
+        } catch (IOException e) {
+            throw new RuntimeException("Failed to start XtraBackup process: " + e.getMessage(), e);
+        }
+
+        BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
+        String line;
+        try {
+            while ((line = reader.readLine()) != null) {
+                System.out.println(line);
+            }
+        } catch (IOException e) {
+            throw new RuntimeException("Failed to read process output: " + e.getMessage(), e);
+        }
+
+        BufferedReader errorReader = new BufferedReader(new InputStreamReader(process.getErrorStream()));
+        String errorLine;
+        try {
+            while ((errorLine = errorReader.readLine()) != null) {
+                System.err.println(errorLine);
+            }
+        } catch (IOException e) {
+            throw new RuntimeException("Failed to read process error output: " + e.getMessage(), e);
+        }
+
+        int exitCode;
+        try {
+            exitCode = process.waitFor();
+        } catch (InterruptedException e) {
+            throw new RuntimeException("Process was interrupted: " + e.getMessage(), e);
+        }
+
+        if (exitCode != 0) {
+            throw new RuntimeException("XtraBackup full backup process failed with exit code: " + exitCode);
+        } else {
+            System.out.println("Full backup completed successfully at: " + targetDir);
+        }
     }
 
-    public static void PerformBackup(){
+    public static void PerformBackup(String MYSQL_USER , String MYSQL_PASSWORD , String targetDir) {
+        String incrementalDir = targetDir + File.separator + "incremental";
+        ProcessBuilder processBuilder = new ProcessBuilder();
+        processBuilder.command("xtrabackup", "--backup",
+                "--user=" + MYSQL_USER,
+                "--password=" + MYSQL_PASSWORD,
+                "--target-dir=" + targetDir);
+
+        if (incrementalDir != null) {
+            processBuilder.command().add("--incremental-basedir=" + incrementalDir);
+        }
+
+        Process process = null;
+        try {
+            process = processBuilder.start();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+        BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
+        String line;
+        while (true) {
+            try {
+                if (!((line = reader.readLine()) != null)) break;
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+            System.out.println(line);
+        }
+
+        int exitCode = 0;
+        try {
+            exitCode = process.waitFor();
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        if (exitCode != 0) {
+            throw new RuntimeException("XtraBackup process failed with exit code: " + exitCode);
+        }
 
     }
 
