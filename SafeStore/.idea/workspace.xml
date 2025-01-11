@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="32856d65-fa3c-4bf8-847d-32fffc7e9e09" name="Changes" comment="add: checks if xtrabackup is installed in your system.">
+    <list default="true" id="32856d65-fa3c-4bf8-847d-32fffc7e9e09" name="Changes" comment="add: Full backup if folder is not present.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/service/DbToRestore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/service/DbToRestore.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/service/Incremental/MySQLIncremental.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/service/Incremental/MySQLIncremental.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -80,7 +81,7 @@
       <updated>1736108883774</updated>
       <workItem from="1736108884841" duration="16253000" />
       <workItem from="1736171313345" duration="28745000" />
-      <workItem from="1736609355297" duration="18301000" />
+      <workItem from="1736609355297" duration="19800000" />
     </task>
     <task id="LOCAL-00001" summary="Initial setup. Test on fetching from jdbc api.">
       <option name="closed" value="true" />
@@ -202,7 +203,15 @@
       <option name="project" value="LOCAL" />
       <updated>1736629984729</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="add: Full backup if folder is not present.">
+      <option name="closed" value="true" />
+      <created>1736633153644</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1736633153644</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -224,7 +233,8 @@
     <MESSAGE value="add: Code formatting to ask user for right relative path." />
     <MESSAGE value="add: Recorrection of the logic" />
     <MESSAGE value="add: checks if xtrabackup is installed in your system." />
-    <option name="LAST_COMMIT_MESSAGE" value="add: checks if xtrabackup is installed in your system." />
+    <MESSAGE value="add: Full backup if folder is not present." />
+    <option name="LAST_COMMIT_MESSAGE" value="add: Full backup if folder is not present." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

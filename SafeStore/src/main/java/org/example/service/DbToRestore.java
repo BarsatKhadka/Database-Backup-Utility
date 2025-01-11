@@ -71,7 +71,7 @@ public class DbToRestore {
 
 
             MySQLIncremental incremental = new MySQLIncremental();
-            incremental.incremental(username , password);
+            incremental.incremental(username , password , databaseName);
 
         }
 

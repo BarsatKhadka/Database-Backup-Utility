@@ -7,7 +7,7 @@ import java.io.InputStreamReader;
 import java.util.Scanner;
 
 public class MySQLIncremental {
-    public void incremental(String user , String password) {
+    public void incremental(String user , String password , String databaseName) {
         String username = user;
         String pwd = password;
 
@@ -40,7 +40,7 @@ public class MySQLIncremental {
         }
         else{
             System.out.println("Creating new folder on directory " + incrementalBackupDir + File.separator + folderName + " and storing your Incremental Backup File.");
-            PerformFullBackup(user,pwd , incrementalBackupDir+File.separator+folderName);
+            PerformFullBackup(user,pwd , incrementalBackupDir+File.separator+folderName , databaseName);
             System.out.println("Folder created and full backup is set for future incremental backup.!");
 
         }
@@ -59,13 +59,15 @@ public class MySQLIncremental {
 
     }
 
-    public static void PerformFullBackup(String MYSQL_USER, String MYSQL_PASSWORD, String targetDir) {
+    public static void PerformFullBackup(String MYSQL_USER, String MYSQL_PASSWORD, String targetDir ,String database) {
         System.out.println("\nsudo: Enter your password: ");
         Scanner scanner = new Scanner(System.in);
         String sudoPassword = scanner.next();
 
         ProcessBuilder processBuilder = new ProcessBuilder();
-        processBuilder.command("bash", "-c", "echo " + sudoPassword + " | sudo -S xtrabackup --backup --user=" + MYSQL_USER + " --password=" + MYSQL_PASSWORD + " --target-dir=" + targetDir);
+        processBuilder.command("bash", "-c", "echo " + sudoPassword + " | sudo -S xtrabackup --backup --user=" + MYSQL_USER + " --password=" + MYSQL_PASSWORD + " --target-dir=" + targetDir +
+                " --databases=" + database);
+
 
         System.out.println("Executing command: " + targetDir);
 
