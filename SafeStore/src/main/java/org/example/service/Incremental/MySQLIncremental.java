@@ -10,12 +10,13 @@ public class MySQLIncremental {
                 "your file in desktop , simply type Desktop");
         System.out.print("\nEnter relative path of your Incremental Backup File: ");
         String incrementalBackupDir = giveIncrementalBackupDir();
-        while(!incrementalBackupDir.equals("directory path not valid")) {
+        while(incrementalBackupDir.equals("directory path not valid.")) {
             System.out.println("---------Directory path not valid---------------");
             System.out.print("\nReEnter relative path of your Incremental Backup File: ");
             incrementalBackupDir = giveIncrementalBackupDir();
         }
-        System.out.println("Enter file name");
+
+
 
     }
 

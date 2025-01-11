@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="32856d65-fa3c-4bf8-847d-32fffc7e9e09" name="Changes" comment="add: Directory path to push incremental backups to.">
+    <list default="true" id="32856d65-fa3c-4bf8-847d-32fffc7e9e09" name="Changes" comment="add: Code formatting to ask user for right relative path.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/service/Incremental/MySQLIncremental.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/service/Incremental/MySQLIncremental.java" afterDir="false" />
     </list>
@@ -80,7 +80,7 @@
       <updated>1736108883774</updated>
       <workItem from="1736108884841" duration="16253000" />
       <workItem from="1736171313345" duration="28745000" />
-      <workItem from="1736609355297" duration="11075000" />
+      <workItem from="1736609355297" duration="11814000" />
     </task>
     <task id="LOCAL-00001" summary="Initial setup. Test on fetching from jdbc api.">
       <option name="closed" value="true" />
@@ -178,7 +178,15 @@
       <option name="project" value="LOCAL" />
       <updated>1736620288946</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="add: Code formatting to ask user for right relative path.">
+      <option name="closed" value="true" />
+      <created>1736621916332</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1736621916332</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -197,7 +205,8 @@
     <MESSAGE value="add: added option for type of backup. (Logic only implemented for full backups)" />
     <MESSAGE value="add: Only full backups for 'all' databases and Setup of MySQL for incremental backups." />
     <MESSAGE value="add: Directory path to push incremental backups to." />
-    <option name="LAST_COMMIT_MESSAGE" value="add: Directory path to push incremental backups to." />
+    <MESSAGE value="add: Code formatting to ask user for right relative path." />
+    <option name="LAST_COMMIT_MESSAGE" value="add: Code formatting to ask user for right relative path." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
