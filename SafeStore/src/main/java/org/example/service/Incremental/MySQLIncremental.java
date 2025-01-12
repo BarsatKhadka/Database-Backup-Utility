@@ -4,6 +4,8 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 public class MySQLIncremental {
@@ -118,18 +120,25 @@ public class MySQLIncremental {
         Scanner scanner = new Scanner(System.in);
         String sudoPassword = scanner.next();
 
-        String incrementalDir = targetDir + File.separator + "incremental" + System.currentTimeMillis();
+        LocalDateTime now = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        String nowFormatted = now.format(formatter).replace("-", "_");
+
+
+        String incrementalDir = targetDir + File.separator + "incremental_" + nowFormatted;
         ProcessBuilder processBuilder = new ProcessBuilder();
         processBuilder.command("bash", "-c", "echo " + sudoPassword + " | sudo -S xtrabackup --backup " +
                 "--user=" + MYSQL_USER + " " +
                 "--password=" + MYSQL_PASSWORD + " " +
                 "--target-dir=" + incrementalDir + " " +
-                "--incremental-basedir=" + targetDir);
+                "--incremental-basedir=" + targetDir +
+                " --databases=" + database);
 
 
         Process process = null;
         try {
             process = processBuilder.start();
+            System.out.println("Executing command: " + targetDir + File.separator + "incremental " + nowFormatted);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -158,6 +167,7 @@ public class MySQLIncremental {
         int exitCode = 0;
         try {
             exitCode = process.waitFor();
+            System.out.println("Incremental backup completed successfully at: " + targetDir + File.separator + "incremental " + nowFormatted);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
