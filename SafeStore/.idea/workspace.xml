@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="32856d65-fa3c-4bf8-847d-32fffc7e9e09" name="Changes" comment="add: incremental backup created">
+    <list default="true" id="32856d65-fa3c-4bf8-847d-32fffc7e9e09" name="Changes" comment="add: incremental backup file name will have date assosciated with it.">
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/service/Incremental/MySQLIncremental.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/service/Incremental/MySQLIncremental.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/service/DbToRestore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/service/DbToRestore.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,8 +66,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-fdfe4dae3a2d-intellij.indexing.shared.core-IU-243.22562.218" />
-        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-IU-243.22562.218" />
+        <option value="bundled-jdk-9823dce3aa75-125ca727e0f0-intellij.indexing.shared.core-IU-243.23654.117" />
+        <option value="bundled-js-predefined-d6986cc7102b-822845ee3bb5-JavaScript-IU-243.23654.117" />
       </set>
     </attachedChunks>
   </component>
@@ -80,7 +81,9 @@
       <updated>1736108883774</updated>
       <workItem from="1736108884841" duration="16253000" />
       <workItem from="1736171313345" duration="28745000" />
-      <workItem from="1736609355297" duration="26094000" />
+      <workItem from="1736609355297" duration="28544000" />
+      <workItem from="1736695373378" duration="25000" />
+      <workItem from="1737513763087" duration="932000" />
     </task>
     <task id="LOCAL-00001" summary="Initial setup. Test on fetching from jdbc api.">
       <option name="closed" value="true" />
@@ -226,7 +229,15 @@
       <option name="project" value="LOCAL" />
       <updated>1736639120151</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="add: incremental backup file name will have date assosciated with it.">
+      <option name="closed" value="true" />
+      <created>1736641335716</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1736641335716</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -251,7 +262,8 @@
     <MESSAGE value="add: Full backup if folder is not present." />
     <MESSAGE value="add: Targeting full backups for incremental backup based on database name" />
     <MESSAGE value="add: incremental backup created" />
-    <option name="LAST_COMMIT_MESSAGE" value="add: incremental backup created" />
+    <MESSAGE value="add: incremental backup file name will have date assosciated with it." />
+    <option name="LAST_COMMIT_MESSAGE" value="add: incremental backup file name will have date assosciated with it." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
