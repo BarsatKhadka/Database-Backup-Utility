@@ -1,0 +1,1 @@
+try-with-resources was introduced in java 9 and it eliminates the need for finally block. Put your condition directly in try block's parantheses.
