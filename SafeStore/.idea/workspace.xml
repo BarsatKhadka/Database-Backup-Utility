@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="32856d65-fa3c-4bf8-847d-32fffc7e9e09" name="Changes" comment="add: incremental backup file name will have date assosciated with it.">
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/service/DbToRestore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/service/DbToRestore.java" afterDir="false" />
-    </list>
+    <list default="true" id="32856d65-fa3c-4bf8-847d-32fffc7e9e09" name="Changes" comment="add: readMe file" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -83,7 +79,7 @@
       <workItem from="1736171313345" duration="28745000" />
       <workItem from="1736609355297" duration="28544000" />
       <workItem from="1736695373378" duration="25000" />
-      <workItem from="1737513763087" duration="932000" />
+      <workItem from="1737513763087" duration="1244000" />
     </task>
     <task id="LOCAL-00001" summary="Initial setup. Test on fetching from jdbc api.">
       <option name="closed" value="true" />
@@ -237,7 +233,15 @@
       <option name="project" value="LOCAL" />
       <updated>1736641335716</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="add: readMe file">
+      <option name="closed" value="true" />
+      <created>1737515906041</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1737515906041</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -263,7 +267,8 @@
     <MESSAGE value="add: Targeting full backups for incremental backup based on database name" />
     <MESSAGE value="add: incremental backup created" />
     <MESSAGE value="add: incremental backup file name will have date assosciated with it." />
-    <option name="LAST_COMMIT_MESSAGE" value="add: incremental backup file name will have date assosciated with it." />
+    <MESSAGE value="add: readMe file" />
+    <option name="LAST_COMMIT_MESSAGE" value="add: readMe file" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
